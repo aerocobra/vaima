@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="vaima.website_sale.product" inherit_id="website_sale.product">
+        <xpath expr="//t/div/section/div/div/form/div/a[@href='/my/home']" position="before">
+			<input type="text" name="default_code" class="form-control" t-att-value="default_code"/>
+		</xpath>
+	</template>
+</odoo>
