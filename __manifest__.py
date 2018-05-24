@@ -24,7 +24,8 @@
 				],
     "data": [
 		"views/vaimaWebsiteSaleProduct.xml",
-        ],
+		"reports/vaimaOfertaReport.xml",
+		],
     "installable": True,
     "application": True,
 	"auto_install": False,
