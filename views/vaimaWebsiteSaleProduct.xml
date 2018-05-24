@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="vaima.website_sale.product" inherit_id="website_sale.product">
-        <xpath expr="//t/div/section/div/div/form/div/a[@href='/my/home']" position="before">
-			<input type="text" name="default_code" class="form-control" t-att-value="default_code"/>
+    <template id="vaima_website_sale_product" inherit_id="website_sale.product">
+        <xpath expr="//div/section/div/div/form/div/a[@href='#']" position="before">
+            <input type="text" name="defaul_code" class="form-control" t-att-value="default_code"/>
+			<p>VVV test</p>
+        </xpath>
+    </template>
+	<template id="vaima_products_references" inherit_id="website_sale.products_item" active="False" customize_show="True" name="Referencias de producto">
+		<xpath expr="//div[@class='product_price']" position="after">
+			<div class="text-info oe_subdescription" contenteditable="false">
+				<h5><strong><p>referencias:</p></strong></h5>
+				<div itemprop="default_code" t-field="product.default_code"></div>
+			</div>
 		</xpath>
 	</template>
 </odoo>
