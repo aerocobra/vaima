@@ -26,6 +26,7 @@
 		"views/vaimaWebsiteSaleProduct.xml",
 		"reports/vaimaOfertaReport.xml",
 		"reports/vaimaReportDeliverySlipBase.xml",
+		"reports/vaimaReportDeliverySlipPrice.xml",
 		],
     "installable": True,
     "application": True,
