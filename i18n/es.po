@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0-20180523\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-25 11:19+0000\n"
-"PO-Revision-Date: 2018-05-25 11:19+0000\n"
+"POT-Creation-Date: 2018-05-25 16:22+0000\n"
+"PO-Revision-Date: 2018-05-25 16:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,23 +17,26 @@ msgstr ""
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "<span><strong>Customer Address:</strong></span>"
 msgstr "<span><strong>Dirección del Cliente:</strong></span>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "<strong>Date</strong>"
 msgstr "<strong>Fecha</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
+msgid "<strong>Description</strong>"
+msgstr "<strong>Descripción</strong>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
 msgid "<strong>Fiscal Position Remark:</strong>"
 msgstr "<strong>Posición fiscal:</strong>"
-
-#. module: vaima
-#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
-msgid "<strong>Order (Origin)</strong>"
-msgstr "<strong>Orden (Origen)</strong>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
@@ -42,11 +45,30 @@ msgstr "<strong>Payment Term:</strong>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
+msgid "<strong>Pedido</strong>"
+msgstr "<strong>Pedido</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
+msgid "<strong>Presupuesto</strong>"
+msgstr "<strong>Presupuesto</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
+msgid "<strong>Price</strong>"
+msgstr "<strong>Precio</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "<strong>Product</strong>"
 msgstr "<strong>Producto</strong>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "<strong>Quantity</strong>"
 msgstr "<strong>Cantidad</strong>"
 
@@ -62,11 +84,13 @@ msgstr "<strong>Dirección de Envío</strong>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "<strong>Total Without Taxes</strong>"
 msgstr "<strong>Total base</strong>"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "<strong>Total</strong>"
 msgstr "<strong>Total</strong>"
 
@@ -76,12 +100,18 @@ msgid "<strong>Your Reference:</strong>"
 msgstr "<strong>Su Referencia:</strong>"
 
 #. module: vaima
+#: model:ir.actions.report,name:vaima.vaimaReportDeliverySlipPrice_action
+msgid "Albaran salida CON precio"
+msgstr "Albaran salida CON precio"
+
+#. module: vaima
 #: model:ir.actions.report,name:vaima.vaimaReportDeliverySlipBase_action
-msgid "Albaran salida SIN precio"
-msgstr "Albaran salida SIN precio"
+msgid "Albaran salida básico"
+msgstr "Albaran salida básico"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "All items couldn't be shipped, the remaining ones will be shipped as soon as they become available."
 msgstr "Todos los artículos no pudieron ser enviados, los restantes serán enviados tan pronto como estén disponibles."
 
@@ -112,6 +142,7 @@ msgstr "Dirección de facturación y de envío:"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "Lot/Serial Number"
 msgstr "Lote/Nº de serie"
 
@@ -152,11 +183,13 @@ msgstr "Referencia"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "Taxes"
 msgstr "Impuestos"
 
 #. module: vaima
 #: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipPriceDocument
 msgid "This shipment is a backorder of"
 msgstr "Este envío es un pedido parcial de"
 
