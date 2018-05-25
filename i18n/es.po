@@ -1,0 +1,182 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* vaima
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20180523\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-25 11:19+0000\n"
+"PO-Revision-Date: 2018-05-25 11:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "<span><strong>Customer Address:</strong></span>"
+msgstr "<span><strong>Dirección del Cliente:</strong></span>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "<strong>Date</strong>"
+msgstr "<strong>Fecha</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>Posición fiscal:</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "<strong>Order (Origin)</strong>"
+msgstr "<strong>Orden (Origen)</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Payment Term:</strong>"
+msgstr "<strong>Payment Term:</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "<strong>Product</strong>"
+msgstr "<strong>Producto</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "<strong>Quantity</strong>"
+msgstr "<strong>Cantidad</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>Comercial:</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>Dirección de Envío</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Total Without Taxes</strong>"
+msgstr "<strong>Total base</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>Su Referencia:</strong>"
+
+#. module: vaima
+#: model:ir.actions.report,name:vaima.vaimaReportDeliverySlipBase_action
+msgid "Albaran salida SIN precio"
+msgstr "Albaran salida SIN precio"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "All items couldn't be shipped, the remaining ones will be shipped as soon as they become available."
+msgstr "Todos los artículos no pudieron ser enviados, los restantes serán enviados tan pronto como estén disponibles."
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Date Ordered:"
+msgstr "Fecha pedido:"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Description"
+msgstr "Descripción"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Invoicing address:"
+msgstr "Dirección de facturación:"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Invoicing and shipping address:"
+msgstr "Dirección de facturación y de envío:"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "Lot/Serial Number"
+msgstr "Lote/Nº de serie"
+
+#. module: vaima
+#: model:ir.actions.report,name:vaima.vaimaOfertaReport_action
+msgid "Oferta VAIMA"
+msgstr "Oferta VAIMA"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Order #"
+msgstr "Pedido #"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Price"
+msgstr "Precio"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Quotation #"
+msgstr "Presupuesto # "
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Quotation Date:"
+msgstr "Fecha de presupuesto:"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaReportDeliverySlipBaseDocument
+msgid "This shipment is a backorder of"
+msgstr "Este envío es un pedido parcial de"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaimaOfertaReportDocument
+msgid "VAT:"
+msgstr "CIF/NIF:"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaima_website_sale_product
+msgid "VVV test"
+msgstr "VVV test"
+
+#. module: vaima
+#: model:ir.ui.view,arch_db:vaima.vaima_products_references
+msgid "referencias:"
+msgstr "referencias:"
+
