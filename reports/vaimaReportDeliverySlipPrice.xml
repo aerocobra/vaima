@@ -172,8 +172,8 @@
 			                        <tr class="border-black">
 			                            <td><strong>Total</strong></td>
 			                            <td class="text-right">
-										<t t-set="grandTotal" t-value="totalUntaxedPrice + totalTax"/>
-										<td><strong><span t-esc="grandTotal"/></strong></td>
+											<t t-set="grandTotal" t-value="totalUntaxedPrice + totalTax"/>
+											<strong><span t-esc="grandTotal"/></strong>
 			                            </td>
 			                        </tr>
 			                    </table>
