@@ -1,20 +1,20 @@
 <odoo>
 	<data>
-		<report id="vaimaReportDeliverySlipBase_action"
-			string="Albaran salida SIN precio"
+		<report id="vaimaReportDeliverySlipPrice_action"
+			string="Albaran salida CON precio"
 			model="stock.picking"
 			report_type="qweb-pdf"
-            file="vaima.vaimaReportDeliverySlipBase"
-			name="vaima.vaimaReportDeliverySlipBase"
+            file="vaima.vaimaReportDeliverySlipPrice"
+			name="vaima.vaimaReportDeliverySlipPrice"
 		/>
-		<template id="vaimaReportDeliverySlipBase">
+		<template id="vaimaReportDeliverySlipPrice">
 			<t t-call="web.html_container">
 				<t t-foreach="docs" t-as="o">
-					<t t-call="vaima.vaimaReportDeliverySlipBaseDocument" t-lang="o.partner_id.lang"/>
+					<t t-call="vaima.vaimaReportDeliverySlipPriceDocument" t-lang="o.partner_id.lang"/>
 				</t>
 			</t>
 		</template>
-		<template id="vaimaReportDeliverySlipBaseDocument">
+		<template id="vaimaReportDeliverySlipPriceDocument">
 	        <t t-call="web.html_container">
 	            <t t-call="web.external_layout">
 	                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
@@ -50,7 +50,7 @@
 	                                <td t-if="o.origin">
 	                                    <span t-field="o.origin"/>
 	                                </td>
-	                                <td t-if="o.sale_id.client_order_ref">
+	                                <td>
 	                                    <span t-field="o.sale_id.client_order_ref"/>
 	                                </td>
 	                                <td name="td_sched_date">
@@ -74,6 +74,8 @@
 	                            </tr>
 	                        </thead>
 	                        <tbody>
+								<t t-set="totalUntaxedPrice" t-value="0"/>
+								<t t-set="totalTax" t-value="0"/>
 	                            <tr t-foreach="o.move_lines" t-as="move">
 	                                <td><span t-field="move.product_id.default_code"/></td>
 	                                <td><span t-field="move.product_id.description_sale"/></td>
@@ -81,7 +83,13 @@
 	                                    <span t-field="move.quantity_done"/>
 	                                    <span t-field="move.product_uom"/>
 	                                </td>
-	                                <td><span t-field="move.product_id.list_price"/></td>
+	                                <!-- td><span t-field="move.product_id.list_price"/></td -->
+									<t t-set="unitPrice" t-value="move.product_id.list_price"/>
+									<td><span t-esc="unitPrice"/></td>
+									<t t-set="quantity" t-value="move.quantity_done"/>
+									<t t-set="totalUntaxedPrice" t-value="totalUntaxedPrice + (unitPrice * quantity)"/>
+									<t t-set="unitTax" t-value="move.product_id.taxes_id.amount / 100"/>
+									<t t-set="totalTax" t-value="totalTax + (unitTax * unitPrice * quantity)"/>
 	                            </tr>
 	                        </tbody>
 	                    </table>
@@ -93,13 +101,18 @@
 	                                <th name="lot_serial" t-if="has_serial_number">
 	                                    Lot/Serial Number
 	                                </th>
+	                                <th><strong>Description</strong></th>
 	                                <th class="text-center"><strong>Quantity</strong></th>
+	                                <th><strong>Price</strong></th>
+
 	                            </tr>
 	                        </thead>
 	                        <tbody>
+								<t t-set="totalUntaxedPrice" t-value="0.0"/>
+								<t t-set="totalTax" t-value="0"/>
 	                            <tr t-foreach="o.move_line_ids" t-as="move_line">
 	                                <td>
-	                                    <span t-field="move_line.product_id"/>
+	                                    <span t-field="move_line.product_id.default_code"/>
 	                                    <p t-if="o.picking_type_code == 'outgoing'">
 	                                        <span t-field="move_line.product_id.sudo().description_pickingout"/>
 	                                    </p>
@@ -126,13 +139,47 @@
 	                                        </table>
 	                                  </td>
 	                                </t>
+	                                <td><span t-field="move_line.product_id.description_sale"/></td>
 	                                <td class="text-center">
 	                                    <span t-field="move_line.qty_done"/>
 	                                    <span t-field="move_line.product_uom_id"/>
 	                                </td>
+									<t t-set="unitPrice" t-value="move_line.product_id.list_price"/>
+									<td><span t-esc="unitPrice"/></td>
+									<t t-set="quantity" t-value="move_line.qty_done"/>
+									<t t-set="totalUntaxedPrice" t-value="totalUntaxedPrice + (unitPrice * quantity)"/>
+									<t t-set="unitTax" t-value="move_line.product_id.taxes_id.amount / 100"/>
+									<t t-set="totalTax" t-value="totalTax + (unitTax * unitPrice * quantity)"/>
 	                            </tr>
 	                        </tbody>
 	                    </table>
+	                    <!-- START -->
+			            <div class="row" name="total">
+			                <div class="col-xs-4 pull-right">
+			                    <table class="table table-condensed">
+			                        <tr class="border-black">
+			                            <td><strong>Total Without Taxes</strong></td>
+			                            <td class="text-right">
+											<span t-esc="totalUntaxedPrice"/>
+			                            </td>
+			                        </tr>
+			                        <tr>
+			                            <td>Taxes</td>
+			                            <td class="text-right">
+											<span t-esc="totalTax"/>
+			                            </td>
+			                        </tr>
+			                        <tr class="border-black">
+			                            <td><strong>Total</strong></td>
+			                            <td class="text-right">
+										<t t-set="grandTotal" t-value="totalUntaxedPrice + totalTax"/>
+										<td><strong><span t-esc="grandTotal"/></strong></td>
+			                            </td>
+			                        </tr>
+			                    </table>
+			                </div>
+			            </div>
+	                    <!-- END -->
 	                    <p t-if="o.backorder_id">
 	                        This shipment is a backorder of <t t-esc="o.backorder_id.name"/>.
 	                    </p>
