@@ -35,6 +35,18 @@
 	                    <h2>
 	                        <span t-field="o.name"/>
 	                    </h2>
+		                 <!-- BEGIN -->
+		                 <div class="row mt32 mb32">
+		                 <div class="col-xs-2" t-if="o.origin">
+		                    <strong>Source:</strong>
+		                    <p t-field="o.origin"/>
+		                </div>
+		                 <div class="col-xs-2" t-if="o.sale_id.client_order_ref">
+		                    <strong>Pedido:</strong>
+		                    <p t-field="o.sale_id.client_order_ref"/>
+		                </div>
+		                 </div>
+		                 <!-- END-->
 	                    <table class="table table-condensed">
 	                        <thead>
 	                            <tr>
