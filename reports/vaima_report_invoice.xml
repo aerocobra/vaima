@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="vaima_report_invoice_document" inherit_id="sale.report_invoice_document">
+		    <xpath expr="//t[@t-as='l']/tr/td/span" position="replace">
+				<span t-field="l.product_id.description_sale"/>
+		    </xpath>
+		    <xpath expr="//table[@class='table table-condensed']/thead/tr/th" position="before">
+				<th>Reference:</th>
+		    </xpath>
+		    <xpath expr="//t[@t-as='l']/tr/td" position="before">
+				<td>
+					<span t-field="l.product_id.default_code"/>
+				</td>
+		    </xpath>
+		</template>
+	</data>
+</odoo>
