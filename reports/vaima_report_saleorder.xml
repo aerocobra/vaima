@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="vaima_report_saleorder" inherit_id="sale.report_saleorder_document">
+		    <xpath expr="//div[@class='page']/table[@class='table table-condensed']/thead/tr/th" position="attributes">
+					<attribute name="invisible">True</attribute>
+		    </xpath>
+		</template>
+	</data>
+</odoo>
