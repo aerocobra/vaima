@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="vaima_contact_name" inherit_id="base.contact_name">
+		    <xpath expr="//t[@t-if='object&#46;name']" position="replace">
+            <t t-if="object.parent_id.name">
+                <!--  TRUE: si el objeto principal es un contacto, entonces object.parent_id.name es el nombre de la compañia -->
+                <!-- FALSE - si el objeto es la compañia -->
+                <strong>
+					<span  itemprop="name"  t-esc="object.parent_id.name" />
+                </strong>
+            </t>
+            <t t-if="object.parent_id.name and object.name">
+	            <!-- TRUE si el objeto es un contacto y tiene nimbre -->
+				<div />
+				<i><t>Att: </t></i>
+				<span itemprop="name" t-esc="object.name"/>
+			</t>
+		    </xpath>
+		</template>
+	</data>
+</odoo>
