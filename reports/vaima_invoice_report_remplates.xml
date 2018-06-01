@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<template id="vaima_report_invoice_document_inherit_sale" inherit_id="sale.report_invoice_document_inherit_sale">
+		    <xpath expr="//div[@class='col-xs-6']" position="attributes">
+				<attribute name="invisible">True</attribute>
+		    </xpath>
+		</template>
+	</data>
+</odoo>
