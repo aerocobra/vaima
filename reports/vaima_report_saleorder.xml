@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-		<template id="vaima_report_saleorder" inherit_id="sale.report_saleorder_document">
-		    <xpath expr="//div[@class='page']/table[@class='table table-condensed']/thead/tr/th" position="attributes">
-					<attribute name="invisible">True</attribute>
+		<template id="vaima_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+		    <xpath expr="//p[@t-field='doc&#46;date_order']" position="replace">
+					<p t-field="doc.date_order" t-field-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+		    </xpath>
+		    <xpath expr="//t[@t-as='l']/tr/td/span" position="replace">
+				<span t-field="l.product_id.description_sale"/>
+		    </xpath>
+		    <xpath expr="//table[@class='table table-condensed']/thead/tr/th" position="before">
+				<th>Reference:</th>
+		    </xpath>
+		    <xpath expr="//t[@t-as='l']/tr/td" position="before">
+				<td>
+					<span t-field="l.product_id.default_code"/>
+				</td>
+		    </xpath>
+		    <xpath expr="//span[@t-field='l&#46;price_unit']" position="replace">
+				<span t-field="l.price_unit"
+					t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+		    </xpath>
+		    <xpath expr="//t[@t-if='amount_by_group&#91;3&#93; == 1 and doc.amount_untaxed == amount_by_group&#91;2&#93;']/td/span[2]" position="replace">
+				<span>&amp;nbsp;</span>
 		    </xpath>
 		</template>
 	</data>

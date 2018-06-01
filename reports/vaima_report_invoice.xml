@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<data>
-		<template id="vaima_report_invoice_document" inherit_id="sale.report_invoice_document">
-		    <xpath expr="//t[@t-as='l']/tr/td/span" position="replace">
+		<template id="vaima_report_invoice_document" inherit_id="account.report_invoice_document">
+		    <xpath expr="//tr[@t-as='l']/td/span" position="replace">
 				<span t-field="l.product_id.description_sale"/>
 		    </xpath>
 		    <xpath expr="//table[@class='table table-condensed']/thead/tr/th" position="before">
-				<th>Reference:</th>
+				<th>Reference</th>
 		    </xpath>
-		    <xpath expr="//t[@t-as='l']/tr/td" position="before">
+		    <xpath expr="//tr[@t-as='l']/td" position="before">
 				<td>
 					<span t-field="l.product_id.default_code"/>
 				</td>
+		    </xpath>
+		    <xpath expr="//span[@t-field='l&#46;price_unit']" position="replace">
+				<span t-field="l.price_unit"
+					t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+		    </xpath>
+		    <xpath expr="//t[@t-if='len&#40;o&#46;tax_line_ids&#41; == 1 and o&#46;amount_untaxed == amount_by_group&#91;2&#93;']/td/span[2]" position="replace">
+				<span>&amp;nbsp;</span>
 		    </xpath>
 		</template>
 	</data>

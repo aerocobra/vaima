@@ -67,7 +67,7 @@
 	                    <table class="table table-condensed mt48" t-if="not o.move_line_ids">
 	                        <thead>
 	                            <tr>
-	                                <th><strong>Product</strong></th>
+	                                <th><strong>Reference</strong></th>
 	                                <th><strong>Description</strong></th>
 	                                <th><strong>Quantity</strong></th>
 	                                <th><strong>Price</strong></th>
@@ -97,7 +97,7 @@
 	                        <t t-set="has_serial_number" t-value="o.move_line_ids.mapped('lot_id')" groups="stock.group_production_lot"/>
 	                        <thead>
 	                            <tr>
-	                                <th><strong>Product</strong></th>
+	                                <th><strong>Reference</strong></th>
 	                                <th name="lot_serial" t-if="has_serial_number">
 	                                    Lot/Serial Number
 	                                </th>

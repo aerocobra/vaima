@@ -23,8 +23,12 @@
                 'mail',
 				],
     "data": [
+		"ir/vaima_ir_qweb.xml",
 		"views/vaimaWebsiteSaleProduct.xml",
-		"reports/vaimaOfertaReport.xml",
+		"reports/vaima_report_saleorder.xml",
+		"reports/vaima_report_invoice.xml",
+		"reports/vaima_invoice_report_remplates.xml",
+		"reports/vaima_purchase_order_templates.xml",
 		"reports/vaimaReportDeliverySlipBase.xml",
 		"reports/vaimaReportDeliverySlipPrice.xml",
 		],
