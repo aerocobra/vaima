@@ -7,13 +7,16 @@
 					<span t-if="not object.is_company" itemprop="name"  t-esc="object.parent_id.name" />
 					<span t-if="object.is_company" itemprop="name"  t-esc="object.name" />
                 </strong>
-			<!--  t t-if="object.parent_id.name and object.name"-->
-			<t t-if="(not object.is_company) and object.name">
-				<!-- TRUE si el objeto es un contacto y tiene nombre -->
-				<div />
-				<i><t>Att: </t></i>
-				<span itemprop="name" t-esc="object.name"/>
-			</t>
+				<!--  t t-if="object.parent_id.name and object.name"-->
+				<t t-if="(not object.is_company) and object.name">
+					<!-- TRUE si el objeto es un contacto y tiene nombre -->
+					<div />
+					<i><t>Att: </t></i>
+					<span itemprop="name" t-esc="object.name"/>
+				</t>
+		    </xpath>
+		    <xpath expr="//t[@t-if='not object&#46;name and object&#46;parent_name']" position="replace">
+				<t> </t>
 		    </xpath>
 		</template>
 	</data>

@@ -21,9 +21,9 @@
 	                <div class="page">
 	                    <div class="row" name="customer_address">
 	                        <div class="col-xs-4 pull-right">
-	                            <div>
+	                            <!-- div>
 	                                <span><strong>Customer Address:</strong></span>
-	                            </div>
+	                            </div -->
 	                            <div t-if="o.move_lines and o.move_lines[0].partner_id" name="partner_header">
 	                                <div t-field="o.move_lines[0].partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True}"/>
 	                            </div>
