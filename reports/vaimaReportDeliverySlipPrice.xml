@@ -166,14 +166,14 @@
 			                        <tr>
 			                            <td>Taxes</td>
 			                            <td class="text-right">
-											<span t-esc="totalTax"/>
+											<span t-esc="round ( totalTax, 2)"/>
 			                            </td>
 			                        </tr>
 			                        <tr class="border-black">
 			                            <td><strong>Total</strong></td>
 			                            <td class="text-right">
 											<t t-set="grandTotal" t-value="totalUntaxedPrice + totalTax"/>
-											<strong><span t-esc="grandTotal"/></strong>
+											<strong><span t-esc="round (grandTotal, 2)"/></strong>
 			                            </td>
 			                        </tr>
 			                    </table>
